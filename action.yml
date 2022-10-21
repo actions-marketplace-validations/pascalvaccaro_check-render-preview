@@ -16,3 +16,6 @@ outputs:
 runs:
   using: 'node16'
   main: 'index.js'
+branding:
+  color: 'orange'
+  icon: 'refresh-ccw'
