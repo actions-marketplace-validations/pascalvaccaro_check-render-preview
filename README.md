@@ -4,42 +4,9 @@ This action checks the deployment of [preview environments](https://render.com/d
 
 ## Inputs
 
-### `SERVICES_NAME`
+### `SERVICE_NAME`
 
-**Required** A list of Render services to check. This action checks a service's name against the deployment's `original_environment`:
-
-```
-original_environment.includes(`${service_name} PR #${GITHUB_PR_ID}`)
-```
-
-#### *Example*
-
-Considering three services in Render named: 
-
-- `blog`
-- `dashboard`
-- `api`
-
-You can pass such a list in your workflow file this way:
-
-```yaml
-jobs:
-  your_job:
-    steps:
-      - uses: actions/check-render-preview@v1
-        with:
-          SERVICES_NAME: |
-            blog
-            dashboard
-            api
-```
-
-> **Beware**
-> This action outputs the ***first*** service deployment URL
-
-### `GITHUB_PR_ID`
-
-The Pull Request ID matching the Preview Environment (default to `${{ github.event.number }}`)
+**Required** The name of the Render service to check
 
 ## Outputs
 
@@ -110,11 +77,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        SERVICES_NAME: |
-          blog
-          api
-          dashboard
-    - name: 'Check the Blog homepage'
+        SERVICE_NAME: dashboard
+    - name: 'Check the Dashboard homepage'
       # Condition this step to the output of the previous step
       if: steps.wait.outputs.env_status == 'success'
       uses: lakuapik/gh-actions-http-status@v1

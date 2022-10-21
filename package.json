@@ -1,12 +1,9 @@
 {
   "name": "check-render-preview",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Github Action to check a Render Preview Environment deployment",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": ["render", "github actions", "preview environment"],
+  "author": "Pascal Vaccaro <pascal.vaccaro@gmail.com>",
   "license": "ISC"
 }
