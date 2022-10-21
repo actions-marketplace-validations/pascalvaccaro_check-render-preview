@@ -1,6 +1,6 @@
 {
   "name": "check-render-preview",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Github Action to check a Render Preview Environment deployment",
   "main": "index.js",
   "keywords": ["render", "github actions", "preview environment"],

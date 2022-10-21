@@ -2,9 +2,9 @@ const { EOL } = require('node:os');
 const { fetch } = require("./utils");
 const {
 	// Github Actions variables
-	GITHUB_REF_NAME = '',
 	GITHUB_REPOSITORY = '',
 	// Input variables
+	INPUT_BRANCH_NAME = '',
 	INPUT_GITHUB_PR_ID = '',
 	INPUT_SERVICE_NAME = '',
 } = process.env;
@@ -38,4 +38,4 @@ async function waitUntil(url, stopMsg, previous = []) {
 		process.stdout.write("::error::" + err.toString() + EOL);
 		process.exit(1);
 	}
-})(GITHUB_REPOSITORY, GITHUB_REF_NAME, INPUT_SERVICE_NAME, INPUT_GITHUB_PR_ID);
+})(GITHUB_REPOSITORY, INPUT_BRANCH_NAME, INPUT_SERVICE_NAME, INPUT_GITHUB_PR_ID);

@@ -8,6 +8,10 @@ This action checks the deployment of [preview environments](https://render.com/d
 
 **Required** The name of the Render service to check
 
+### `BRANCH_NAME`
+
+The name of the branch deployed by your Render Blueprint (defaults to `master`)
+
 ## Outputs
 
 ### `env_url`

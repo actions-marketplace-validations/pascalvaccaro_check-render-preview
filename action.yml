@@ -5,6 +5,10 @@ inputs:
     description: 'Pull Request number'
     required: false
     default: ${{ github.event.number }}
+  BRANCH_NAME:
+    description: 'The branch deployed by your Render Blueprint'
+    required: false
+    default: master
   SERVICE_NAME:
     description: 'The name of the Render service for which to check deployment status'
     required: true
