@@ -1,0 +1,16 @@
+name: 'Check Render Preview'
+description: 'Check the statuses of Render Preview Environments'
+inputs:
+  GITHUB_PR_ID:
+    description: 'Pull Request number'
+  SERVICES_NAME:
+    description: 'List of Render services names to check'
+    required: true
+outputs:
+  env_status:
+    description: 'The Preview Environment Deployment status'
+  env_url:
+    description: 'The Preview Environment Deployment URL for the first service from SERVICES_NAME'
+runs:
+  using: 'node16'
+  main: 'index.js'
